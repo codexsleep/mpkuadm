@@ -1,0 +1,14 @@
+/application/config/
+/application/config/*
+/application/config/*.php
+/application/config/database.php
+/application/config/config.php
+application/config/
+application/config/*
+application/config/*.php
+application/config/database.php
+application/config/config.php
+config/config.php
+config/*
+/config/*.php
+*/config
