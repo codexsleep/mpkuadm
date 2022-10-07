@@ -50,8 +50,8 @@
                                 <span class="logo-sm">
                                     <img decoding="async" src="<?= base_url('assets/images/'); ?>logo-sm.png" alt="" height="22">
                                 </span>
-                                <span class="logo-lg">
-                                    <img decoding="async" src="<?= base_url('assets/images/'); ?>logo-light.png" alt="" height="17">
+                                <span class="logo-lg" style="color:white; font-weight:bold; font-size:20px">
+                                    MPKU ADM
                                 </span>
                             </a>
                         </div>
@@ -178,9 +178,7 @@
                     </div>
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="<?php if ($this->uri->segment(3) != null) {
-                                                                    echo base_url('admin/');
-                                                                } ?>dashboard">
+                            <a class="nav-link menu-link" href="<?php if ($this->uri->segment(3) != null) { echo base_url('admin/'); } ?>dashboard">
                                 <i class="las la-tachometer-alt"></i> <span data-key="t-widgets">Dashboard</span>
                             </a>
                         </li><!-- end Dashboards Menu -->
@@ -192,12 +190,8 @@
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
 
-                                        <a href="<?php if ($this->uri->segment(5) == null) {
-                                                        echo base_url('admin/customer/');
-                                                    } ?>all" class="nav-link" data-key="t-horizontal">All Customer</a>
-                                        <a href="<?php if ($this->uri->segment(5) == null) {
-                                                        echo base_url('admin/customer/');
-                                                    } ?>tambah" class="nav-link" data-key="t-horizontal">Tambah Customer</a>
+                                        <a href="<?php if($this->uri->segment(3)==null or $this->uri->segment(2)!="customer"){echo base_url('admin/customer/');}?>all" class="nav-link" data-key="t-horizontal">All Customer </a>
+                                        <a href="<?php if($this->uri->segment(3)==null or $this->uri->segment(2)!="customer"){echo base_url('admin/customer/');}?>tambah" class="nav-link" data-key="t-horizontal">Tambah Customer</a>
                                     </li>
                                 </ul>
                             </div>
@@ -210,17 +204,15 @@
                             <div class="collapse menu-dropdown" id="sidebarToko">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-
-                                        <a href="#layouts-horizontal.html" class="nav-link" data-key="t-horizontal">All Toko <span class="badge bg-soft-warning text-warning mt-1 float-end">0</span> <span class="badge bg-soft-danger text-danger mt-1 float-end" style="margin-left:8px;">0</span></a>
-                                        <a href="#layouts-horizontal.html" class="nav-link" data-key="t-horizontal">Tambah Toko</a>
-                                        <a href="#layouts-horizontal.html" class="nav-link" data-key="t-horizontal">Manage Provinsi</a>
-                                        <a href="#layouts-horizontal.html" class="nav-link" data-key="t-horizontal">Manage Kota</a>
-                                        <a href="#layouts-horizontal.html" class="nav-link" data-key="t-horizontal">Manage Kategori</a>
+                                        <a href="<?php if ($this->uri->segment(3) != null) { echo base_url('admin/'); } ?>store" class="nav-link" data-key="t-horizontal">All Toko <span class="badge bg-soft-warning text-warning mt-1 float-end">0</span> <span class="badge bg-soft-danger text-danger mt-1 float-end" style="margin-left:8px;">0</span></a>
+                                        <a href="<?php if($this->uri->segment(3)==null or $this->uri->segment(2)!="store"){echo base_url('admin/store/');}?>tambah" class="nav-link" data-key="t-horizontal">Tambah Toko</a>
+                                        <a href="<?php if ($this->uri->segment(3) != null) { echo base_url('admin/'); } ?>province" class="nav-link" data-key="t-horizontal">Manage Provinsi</a>
+                                        <a href="<?php if ($this->uri->segment(3) != null) { echo base_url('admin/'); } ?>city" class="nav-link" data-key="t-horizontal">Manage Kota</a>
+                                        <a href="<?php if ($this->uri->segment(3) != null) { echo base_url('admin/'); } ?>category" class="nav-link" data-key="t-horizontal">Manage Kategori</a>
                                     </li>
                                 </ul>
                             </div>
                         </li> <!-- end Publishers Menu -->
-
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarStaff" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPublishers">
                                 <i class="bx bx-id-card"></i> <span data-key="t-layouts">Staff</span>
